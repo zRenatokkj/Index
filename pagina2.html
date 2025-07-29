@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PAGINA 2 – PAGINA DE EXEMPLOS DE APLICAÇÃO WEB</title>
+   <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f9f9f9; }
+        h1, h2 { color: #2d6a4f; }
+        code, pre { background: #e9ecef; padding: 8px; border-radius: 5px; display: block; }
+        .exemplo { margin-bottom: 20px; }
+        .destaque { background: #d8f3dc; padding: 10px; border-radius: 5px; }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 90%;
+            max-width: 250px;
+        }
+        button {
+            padding: 12px 28px;
+            background-color: #2d6a4f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #40916c;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Página 2 – Exemplo de Aplicação Web</h1>
+        <div class="destaque" style="margin-bottom: 25px;">
+            <strong>Programa Simples de Cálculo de IMC com HTML e JavaScript</strong><br>
+            Neste exemplo, o HTML fornecerá a estrutura para os campos de entrada de peso e altura, e um botão para iniciar o cálculo. O JavaScript será responsável por pegar esses valores, calcular o IMC e exibir o resultado na página.
+        </div>
+
+        <h2>Calculadora de IMC</h2>
+        <div class="exemplo">
+            <label for="peso"><b>Peso (kg):</b></label><br>
+            <input type="number" id="peso" placeholder="Ex: 70.5">
+        </div>
+        <div class="exemplo">
+            <label for="altura"><b>Altura (m):</b></label><br>
+            <input type="number" id="altura" placeholder="Ex: 1.75">
+        </div>
+        <button onclick="calcularIMC()">Calcular IMC</button>
+        <div id="resultado"></div>
+
+        <div class="destaque" style="margin-top: 40px;">
+            <h2>Explicação do Código</h2>
+            <ul>
+                <li><b>HTML:</b> Define a estrutura da página, campos de entrada e botão.</li>
+                <li><b>JavaScript:</b> Pega os valores dos campos, faz o cálculo do IMC e exibe o resultado sem precisar de servidor.</li>
+            </ul>
+            <b>Como Usar:</b><br>
+            Digite seu peso e altura nos campos acima e clique em "Calcular IMC". O resultado aparecerá logo abaixo do botão.<br><br>
+            <b>Demonstração da Interação:</b><br>
+            O HTML cria a interface, e o JavaScript faz o cálculo e mostra o resultado instantaneamente no navegador.
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+            <a href="index.html">
+                <button>Voltar para Página 1</button>
+            </a>
+        </div>
+    </div>
+    <script>
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                resultadoDiv.textContent = "Por favor, insira peso e altura válidos.";
+                return;
+            }
+
+            const imc = peso / (altura * altura);
+            resultadoDiv.textContent = `Seu IMC é: ${imc.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+``` 
